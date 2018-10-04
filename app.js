@@ -56,7 +56,7 @@ require('./routes/pages/sites.js')(app);
 require('./routes/pages/category.js')(app);
 require('./routes/pages/subCategory.js')(app);
 require('./routes/pages/users.js')(app);
-// require('./routes/pages/recommandation.js')(app);
+require('./routes/pages/logs.js')(app);
 // require('./routes/pages/sfApi.js')(app);
 // require('./routes/pages/convertion.js')(app);
 app.use('/', index);
