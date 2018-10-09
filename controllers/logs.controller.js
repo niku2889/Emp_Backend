@@ -3,26 +3,33 @@ const Log = require('../models/logs.model.js');
 // Create and Save a new order 
 exports.create = (req, res) => {
     //Validate request
-    if (!req.body.spentHours) {
-        return res.status(400).send({
-            message: "spentHours content can not be empty"
-        });
-    }
+    // if (!req.body.spentHours) {
+    //     return res.status(400).send({
+    //         message: "spentHours content can not be empty"
+    //     });
+    // }
 
     const log = new Log({
         userName: req.body.userName,
         userEmail: req.body.userEmail,
-        siteName: req.body.siteName,
-        siteNo: req.body.siteNo,
-        category: req.body.category,
-        subCategory: req.body.subCategory,
-        estimatedHours: req.body.estimatedHours,
-        spentHours: req.body.spentHours,
-        purchaseReceipt: req.body.purchaseReceipt,
-        notes: req.body.notes,
+        sites: req.body.sites,
+        totalHoursWorked: req.body.totalHoursWorked,
         createDate: req.body.createDate,
-        fileName: req.body.fileName,
-        fileType: req.body.fileType
+        noSitesWorked: req.body.noSitesWorked
+
+        // userName: req.body.userName,
+        // userEmail: req.body.userEmail,
+        // siteName: req.body.siteName,
+        // siteNo: req.body.siteNo,
+        // category: req.body.category,
+        // subCategory: req.body.subCategory,
+        // estimatedHours: req.body.estimatedHours,
+        // spentHours: req.body.spentHours,
+        // purchaseReceipt: req.body.purchaseReceipt,
+        // notes: req.body.notes,
+        // createDate: req.body.createDate,
+        // fileName: req.body.fileName,
+        // fileType: req.body.fileType
     });
 
     // Save Order in the database
@@ -73,28 +80,34 @@ exports.findOne = (req, res) => {
 // Update a order identified by the Id in the request
 exports.update = (req, res) => {
     //Validate request
-    if (!req.body.spentHours) {
-        return res.status(400).send({
-            message: "spentHours content can not be empty"
-        });
-    }
+    // if (!req.body.spentHours) {
+    //     return res.status(400).send({
+    //         message: "spentHours content can not be empty"
+    //     });
+    // }
 
 
     // Find order and update it with the request body
     Log.findByIdAndUpdate(req.params.Id, {
         userName: req.body.userName,
         userEmail: req.body.userEmail,
-        siteName: req.body.siteName,
-        siteNo: req.body.siteNo,
-        category: req.body.category,
-        subCategory: req.body.subCategory,
-        estimatedHours: req.body.estimatedHours,
-        spentHours: req.body.spentHours,
-        purchaseReceipt: req.body.purchaseReceipt,
-        notes: req.body.notes,
+        sites: req.body.sites,
+        totalHoursWorked: req.body.totalHoursWorked,
         createDate: req.body.createDate,
-        fileName: req.body.fileName,
-        fileType: req.body.fileType
+        noSitesWorked: req.body.noSitesWorked
+        // userName: req.body.userName,
+        // userEmail: req.body.userEmail,
+        // siteName: req.body.siteName,
+        // siteNo: req.body.siteNo,
+        // category: req.body.category,
+        // subCategory: req.body.subCategory,
+        // estimatedHours: req.body.estimatedHours,
+        // spentHours: req.body.spentHours,
+        // purchaseReceipt: req.body.purchaseReceipt,
+        // notes: req.body.notes,
+        // createDate: req.body.createDate,
+        // fileName: req.body.fileName,
+        // fileType: req.body.fileType
     }, { new: true })
         .then(uni => {
             if (!uni) {

@@ -4,17 +4,28 @@ const Schema = mongoose.Schema;
 const LogsSchema = new Schema({
     userName: Schema.Types.String,
     userEmail: Schema.Types.String,
-    siteName: Schema.Types.String,
-    siteNo: Schema.Types.String,
-    category: Schema.Types.String,
-    subCategory: Schema.Types.String,
-    estimatedHours: Schema.Types.String,
-    spentHours: Schema.Types.String,
-    purchaseReceipt: Schema.Types.String,
-    notes: Schema.Types.String,
+    sites: [{
+        siteName: Schema.Types.String,
+        hoursWorked: Schema.Types.Number,
+        noOfSubSite: Schema.Types.Number,
+        purchaseReceipt: [{
+            storeName: Schema.Types.String,
+            amount: Schema.Types.Number
+        }],
+        units: [{
+            siteHours: Schema.Types.Number,
+            siteName: Schema.Types.String,
+            unit: [{
+                category: Schema.Types.String,
+                hoursWorked: Schema.Types.Number,
+                subCategory: Schema.Types.String,
+                subSiteName: Schema.Types.String
+            }]
+        }]
+    }],
+    totalHoursWorked: Schema.Types.Number,
     createDate: Schema.Types.String,
-    fileName: Schema.Types.String,
-    fileType: Schema.Types.String,
+    noSitesWorked: Schema.Types.Number,
 });
 
 module.exports = mongoose.model('Log', LogsSchema);
