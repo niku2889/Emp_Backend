@@ -8,6 +8,7 @@ const LogsSchema = new Schema({
         siteName: Schema.Types.String,
         hoursWorked: Schema.Types.Number,
         noOfSubSite: Schema.Types.Number,
+        notes:Schema.Types.String,
         purchaseReceipt: [{
             storeName: Schema.Types.String,
             amount: Schema.Types.Number
