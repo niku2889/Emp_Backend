@@ -8,7 +8,6 @@ const LogsSchema = new Schema({
         siteName: Schema.Types.String,
         hoursWorked: Schema.Types.Number,
         noOfSubSite: Schema.Types.Number,
-        notes: Schema.Types.String,
         purchaseReceipt: [{
             storeName: Schema.Types.String,
             amount: Schema.Types.Number
@@ -16,6 +15,7 @@ const LogsSchema = new Schema({
         units: [{
             siteHours: Schema.Types.Number,
             siteName: Schema.Types.String,
+            notes: Schema.Types.String,
             unit: [{
                 subSiteName: Schema.Types.String,
                 unitTask: [{
