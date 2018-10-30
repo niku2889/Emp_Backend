@@ -22,7 +22,9 @@ const cors = require('cors');
 //Variable Configurations
 //let dbURL = process.env.COSMOSDB_URL || 'mongodb://127.0.0.1:27017/sportscentrum';
 //let dbURL = 'mongodb+srv://niku2889:niku2889@cluster0-tg6ei.mongodb.net/test?retryWrites=true';
-let dbURL = 'mongodb://niku2889:niku2889lee@ds121593.mlab.com:21593/empdb';
+//let dbURL = 'mongodb://niku2889:niku2889lee@ds121593.mlab.com:21593/empdb';
+let dbURL = 'mongodb://rcsnw:834candy@ds143953.mlab.com:43953/rcsdb';
+
 const models = path.join(__dirname, 'models');
 
 // //Model Bootstrapping
